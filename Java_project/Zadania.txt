@@ -1,0 +1,28 @@
+1. Zadanie: Kalkulator BMI
+
+Napisz program w języku programowania, który obliczy wskaźnik masy ciała (BMI) na podstawie podanych przez użytkownika danych: wagi (w kilogramach) i wzrostu (w metrach).
+
+Poproś użytkownika o podanie wagi.
+Poproś użytkownika o podanie wzrostu.
+Oblicz BMI na podstawie wzoru: BMI = masa / (wzrost * wzrost).
+Wyświetl otrzymane BMI oraz odpowiednią kategorię wagową według poniższych przedziałów:
+BMI < 18.5: "Niedowaga"
+18.5 <= BMI < 24.9: "Normalna waga"
+25 <= BMI < 29.9: "Nadwaga"
+BMI >= 30: "Otyłość"
+
+Program ma się kończyć wpisująć w kosoli "koniec"
+
+2.
+Zadanie: Konwerter Temperatury
+
+Napisz program konwertujący temperaturę między stopniami Celsiusza a stopniami Fahrenheita. Użytkownik powinien móc wybrać, czy chce przeliczyć temperaturę z Celsiusza na Fahrenheita czy z Fahrenheita na Celsjusza.
+
+Poproś użytkownika o wybór rodzaju konwersji (Celsiusz → Fahrenheit lub Fahrenheit → Celsiusz).
+Poproś użytkownika o podanie temperatury do przeliczenia.
+Wykonaj odpowiednie obliczenia w zależności od wyboru użytkownika:
+Dla konwersji z Celsiusza na Fahrenheita użyj wzoru: Fahrenheit = (Celsiusz * 9/5) + 32.
+Dla konwersji z Fahrenheita na Celsjusza użyj wzoru: Celsiusz = (Fahrenheit - 32) * 5/9.
+Wyświetl wynik.
+
+"Program ma się kończyć wpisująć w kosoli "koniec"
