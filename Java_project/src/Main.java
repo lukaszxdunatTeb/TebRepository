@@ -1,11 +1,32 @@
 public class Main {
     public static void main(String[] args) {
-        int rok = 2023;
+        int dzienTygodnia = 3;
 
-        if ((rok % 4 == 0 && rok % 100 != 0) || rok % 400 == 0) {
-            System.out.println("Rok jest przestępny.");
-        } else {
-            System.out.println("Rok nie jest przestępny.");
+        switch (dzienTygodnia) {
+            case 1:
+                System.out.println("Poniedziałek");
+                break;
+            case 2:
+                System.out.println("Wtorek");
+                break;
+            case 3:
+                System.out.println("Środa");
+                break;
+            case 4:
+                System.out.println("Czwartek");
+                break;
+            case 5:
+                System.out.println("Piątek");
+                break;
+            case 6:
+                System.out.println("Sobota");
+                break;
+            case 7:
+                System.out.println("Niedziela");
+                break;
+            default:
+                System.out.println("Niepoprawny dzień tygodnia");
+                break;
         }
     }
 }
