@@ -1,14 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        int liczba1 = 10;
-        int liczba2 = 20;
+        int rok = 2023;
 
-        if (liczba1 > liczba2) {
-            System.out.println("Liczba 1 jest większa od liczby 2.");
-        } else if (liczba1 < liczba2) {
-            System.out.println("Liczba 1 jest mniejsza od liczby 2.");
+        if ((rok % 4 == 0 && rok % 100 != 0) || rok % 400 == 0) {
+            System.out.println("Rok jest przestępny.");
         } else {
-            System.out.println("Liczba 1 jest równa liczbie 2.");
+            System.out.println("Rok nie jest przestępny.");
         }
     }
 }
