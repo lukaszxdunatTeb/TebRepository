@@ -1,31 +1,22 @@
 public class Main {
     public static void main(String[] args) {
-        int dzienTygodnia = 3;
+        String owoc = "jabłko";
 
-        switch (dzienTygodnia) {
-            case 1:
-                System.out.println("Poniedziałek");
+        switch (owoc) {
+            case "jabłko":
+                System.out.println("Jabłko jest czerwone i smaczne.");
                 break;
-            case 2:
-                System.out.println("Wtorek");
+            case "banan":
+                System.out.println("Banan jest żółty i słodki.");
                 break;
-            case 3:
-                System.out.println("Środa");
+            case "gruszka":
+                System.out.println("Gruszka jest soczysta i aromatyczna.");
                 break;
-            case 4:
-                System.out.println("Czwartek");
-                break;
-            case 5:
-                System.out.println("Piątek");
-                break;
-            case 6:
-                System.out.println("Sobota");
-                break;
-            case 7:
-                System.out.println("Niedziela");
+            case "kiwi":
+                System.out.println("Kiwi jest zielone i pełne witamin.");
                 break;
             default:
-                System.out.println("Niepoprawny dzień tygodnia");
+                System.out.println("Nieznany owoc.");
                 break;
         }
     }
