@@ -1,23 +1,21 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        String owoc = "jabłko";
+        Scanner scanner = new Scanner(System.in);
 
-        switch (owoc) {
-            case "jabłko":
-                System.out.println("Jabłko jest czerwone i smaczne.");
-                break;
-            case "banan":
-                System.out.println("Banan jest żółty i słodki.");
-                break;
-            case "gruszka":
-                System.out.println("Gruszka jest soczysta i aromatyczna.");
-                break;
-            case "kiwi":
-                System.out.println("Kiwi jest zielone i pełne witamin.");
-                break;
-            default:
-                System.out.println("Nieznany owoc.");
-                break;
+        System.out.print("Podaj górny zakres sumy (liczba całkowita): ");
+        int gornyZakres = scanner.nextInt();
+
+        int suma = 0;
+
+        for (int i = 1; i <= gornyZakres; i++) {
+            suma += i;
         }
+
+        System.out.println("Suma liczb od 1 do " + gornyZakres + " wynosi: " + suma);
+
+        // Zawsze zamykaj scanner po użyciu, aby uniknąć wycieków pamięci.
+        scanner.close();
     }
 }
