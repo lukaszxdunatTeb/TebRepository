@@ -4,61 +4,56 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Podaj liczbę elementów tablicy: ");
-        int elementsNumber = scanner.nextInt();
+        System.out.println("Podaj pierwszą liczbę: ");
+        double number1 = scanner.nextDouble();
 
-        // Inicjalizacja tablicy o podanej liczbie elementów
-        int[] myTable = new int[elementsNumber];
+        System.out.println("Podaj drugą liczbę");
+        double number2 = scanner.nextDouble();
 
-        // Wprowadzenie danych do tablicy
-        insertElements(scanner, elementsNumber, myTable);
+        System.out.println("Wybierz operacje (1 - dodawanie, 2 - odejmowanie, 3 - mnożenie, 4 - dzielenie): ");
+        int operation = scanner.nextInt();
 
-        // Obliczenia statystyczne
-        int sum = 0;
-        int min = myTable[0];
-        int max = myTable[0];
+        double result = 0;
 
-        // Iteracja przez tablicę w celu obliczenia sumy, najmniejszej i największej wartości
-        for (int number : myTable) {
-            sum += number;
-
-            if (number < min) {
-                min = number;
-            }
-
-            if (number > max) {
-                max = number;
-            }
+        switch (operation) {
+            case 1:
+                result = addition(number1, number2);
+                break;
+            case 2:
+                result = subtraction(number1, number2);
+                break;
+            case 3:
+                result = multiplication(number1, number2);
+                break;
+            case 4:
+                result = division(number1, number2);
+                break;
+            default:
+                System.out.println("Nieprawidłowy wybór operacji.");
+                break;
         }
 
-        // Obliczenie średniej
-        double average = getAverage(elementsNumber, sum);
-
-        // Wyświetlenie wyników
-        displayResult(sum, min, max, average);
-
-        // Zawsze zamykaj scanner po użyciu, aby uniknąć wycieków pamięci.
-        scanner.close();
+        System.out.println("Wynik: " + result);
     }
 
-    private static void insertElements(Scanner scanner, int elementsNumber, int[] myTable) {
-        for (int i = 0; i < elementsNumber; i++) {
-            System.out.print("Podaj element nr " + (i + 1) + ": ");
-            myTable[i] = scanner.nextInt();
+    private static double addition(double a, double b) {
+        return a + b;
+    }
+
+    private static double subtraction(double a, double b) {
+        return a - b;
+    }
+
+    private static double multiplication(double a, double b) {
+        return a * b;
+    }
+
+    private static double division(double a, double b) {
+        if (b != 0) {
+            return a / b;
+        } else {
+            System.out.println("Nie można dzielić przez zero.");
+            return 0;
         }
-    }
-
-    private static double getAverage(int liczbaElementow, double suma) {
-        return suma / liczbaElementow;
-//        Kod poniżej jest tożsamy
-//        double srednia = suma / liczbaElementow;
-//        return srednia;
-    }
-
-    private static void displayResult(int suma, int min, int max, double srednia) {
-        System.out.println("Suma: " + suma);
-        System.out.println("Średnia: " + srednia);
-        System.out.println("Najmniejsza wartość: " + min);
-        System.out.println("Największa wartość: " + max);
     }
 }
