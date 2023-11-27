@@ -1,59 +1,36 @@
 import java.util.Scanner;
-
+import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Podaj pierwszą liczbę: ");
-        double number1 = scanner.nextDouble();
-
-        System.out.println("Podaj drugą liczbę");
-        double number2 = scanner.nextDouble();
-
-        System.out.println("Wybierz operacje (1 - dodawanie, 2 - odejmowanie, 3 - mnożenie, 4 - dzielenie): ");
-        int operation = scanner.nextInt();
-
-        double result = 0;
-
-        switch (operation) {
-            case 1:
-                result = addition(number1, number2);
-                break;
-            case 2:
-                result = subtraction(number1, number2);
-                break;
-            case 3:
-                result = multiplication(number1, number2);
-                break;
-            case 4:
-                result = division(number1, number2);
-                break;
-            default:
-                System.out.println("Nieprawidłowy wybór operacji.");
-                break;
-        }
-
-        System.out.println("Wynik: " + result);
-    }
-
-    private static double addition(double a, double b) {
-        return a + b;
-    }
-
-    private static double subtraction(double a, double b) {
-        return a - b;
-    }
-
-    private static double multiplication(double a, double b) {
-        return a * b;
-    }
-
-    private static double division(double a, double b) {
-        if (b != 0) {
-            return a / b;
-        } else {
-            System.out.println("Nie można dzielić przez zero.");
-            return 0;
+        String input;
+        System.out.println("### Witaj w konwenterze temperatury.   ###");
+        System.out.println("### Aby zakończyć działanie programu,  ###");
+        System.out.println("### w dowolnym momencie wpisz 'koniec' ###");
+        while(true){
+            System.out.println();
+            System.out.printf("Proszę podaj temperaturę: ");
+            input = scanner.nextLine();
+            if (input.equalsIgnoreCase("koniec"))
+                return;
+            float odczyttemp = Float.parseFloat(input);
+            System.out.println(" 1.Fahrenheit na Celsiusz");
+            System.out.println(" 2.Celsiusz na Fahrenheit");
+            System.out.printf("Wybierz przelicznik: ");
+            input = scanner.nextLine();
+            if (input.equalsIgnoreCase("koniec"))
+                return;
+            switch (Integer.parseInt(input)) {
+                case 1:
+                    System.out.println( "Stopnie Celsiusza: "  +  ((odczyttemp - 32) * 5/9));
+                    break;
+                case 2:
+                    System.out.println( "Stopnie Fahrenheit: "  +  ((odczyttemp * 9/5) + 32));
+                    break;
+                default:
+                    System.out.println( "Nie wybrano żadnego przelicznika" );
+                    break;
+            }
         }
     }
 }
