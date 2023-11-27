@@ -9,14 +9,14 @@ public class Main {
         System.out.println("### w dowolnym momencie wpisz 'koniec' ###");
         while(true){
             System.out.println();
-            System.out.printf("Proszę podaj temperaturę: ");
+            System.out.println("Proszę podaj temperaturę: ");
             input = scanner.nextLine();
             if (input.equalsIgnoreCase("koniec"))
                 return;
             float odczyttemp = Float.parseFloat(input);
             System.out.println(" 1.Fahrenheit na Celsiusz");
             System.out.println(" 2.Celsiusz na Fahrenheit");
-            System.out.printf("Wybierz przelicznik: ");
+            System.out.println("Wybierz przelicznik: ");
             input = scanner.nextLine();
             if (input.equalsIgnoreCase("koniec"))
                 return;
