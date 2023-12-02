@@ -12,7 +12,17 @@ public class App {
 
         double BMI = waga / (wzrost*wzrost);
         
-        System.out.println(""+BMI);
+        System.out.print(""+BMI+" ");
+
+        if(BMI>30){
+            System.out.println("Otyłość");
+        } else if (BMI>25) {
+            System.out.println("Nadwaga");
+        } else if (BMI>18.5) {
+            System.out.println("Normalna waga");
+        } else {
+            System.out.println("Niedowaga");
+        }
 
     }
 
