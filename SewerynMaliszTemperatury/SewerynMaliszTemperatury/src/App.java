@@ -5,9 +5,21 @@ public class App {
 
         System.out.println("Wybierz typ konwersji.\n1. Celsiusz -> Fahrenheit\n2. Fahrenheit -> Celsjusz\n: ");
 
-        do{
-            break;
-        }while(true);
+        switch (((int) getValue())) {
+            case 1:
+                System.out.print("Podaj temperaturę w stopniach Celsjusza: ");
+                double Temperatura_Celsjusza = getValue();
+                break;
+        
+            case 2:
+                System.out.print("Podaj temperaturę w stopniach Fahrenheita: ");
+                double Temperatura_Fahrenheita = getValue();
+                break;
+        
+            default:
+            System.out.println("Zły wybór");
+                break;
+        }
 
         System.out.println("Koniec");
     }
