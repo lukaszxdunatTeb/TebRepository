@@ -24,6 +24,7 @@ public class App {
             System.out.println("Niedowaga");
         }
 
+        System.out.println("Koniec");
     }
 
     public static double getValue() {
