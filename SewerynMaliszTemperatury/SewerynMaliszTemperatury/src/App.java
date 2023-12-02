@@ -2,6 +2,13 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
+
+        System.out.println("Wybierz typ konwersji.\n1. Celsiusz -> Fahrenheit\n2. Fahrenheit -> Celsjusz\n: ");
+
+        do{
+            break;
+        }while(true);
+
         System.out.println("Koniec");
     }
 
