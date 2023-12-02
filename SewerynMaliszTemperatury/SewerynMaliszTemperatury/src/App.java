@@ -9,11 +9,13 @@ public class App {
             case 1:
                 System.out.print("Podaj temperaturę w stopniach Celsjusza: ");
                 double Temperatura_Celsjusza = getValue();
+                System.out.println((Temperatura_Celsjusza * 9/5) + 32);
                 break;
         
             case 2:
                 System.out.print("Podaj temperaturę w stopniach Fahrenheita: ");
                 double Temperatura_Fahrenheita = getValue();
+                System.out.println((Temperatura_Fahrenheita - 32) * 5/9);
                 break;
         
             default:
