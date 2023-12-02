@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.print("Podaj wagę: ");
+        System.out.print("Podaj wagę w kilogramach: ");
 
         double waga = getValue();
 
-        System.out.print("Podaj wzrost: ");
+        System.out.print("Podaj wzrost w centymetrach: ");
 
         double wzrost = (getValue())/100;
 
