@@ -44,7 +44,9 @@ package Seweryn_Malisz_Zaliczenie;
                         break;
 
                     case 3:                                                                 //Wyświetl wszystkie wpisy
-
+                        for (int i = 0; i < shoppingList.entriesAmount; i++){
+                            System.out.println(shoppingList.shoppingListEntry[i].EntryValue+" x"+shoppingList.shoppingListEntry[i].EntryAmount);
+                        }
                         break;
 
                     case 4:                                                                 //Wyszukaj i wyświetl wpis wpis
