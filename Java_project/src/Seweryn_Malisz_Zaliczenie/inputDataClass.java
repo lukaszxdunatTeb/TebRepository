@@ -7,7 +7,7 @@ package Seweryn_Malisz_Zaliczenie;
 
 import java.util.Scanner;
 
-public class Input_Data_Class {
+public class inputDataClass {
     public static double get_Value_Double() {
         do {
             try {
