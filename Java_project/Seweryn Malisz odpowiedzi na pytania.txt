@@ -1,0 +1,11 @@
+1. git commit -m "Opis zmian"
+    "Aktualizacja" zmian w projekcie i wprowadzenie ich do gita. Argument "-m" dodaje opis zmian którym jest kolejny argument w cudzysłowiu
+
+2. git clone <adres>
+    Pobiera dane z istniejącego repozytorium o adresie podanym w argumencie "<adres>" i przygotowuje folder pod gita i pracę z tym repozytorium
+
+3. git push
+    Przesyła wszystkie zacommitowane zmiany na repozytorium zdalne
+
+4. git checkout <nazwa gałęzi>
+    Ta komenda pozwala na przełączenie się na gałąź podaną w argumencie "<nazwa gałęzi>"
