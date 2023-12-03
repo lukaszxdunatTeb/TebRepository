@@ -17,10 +17,10 @@ public class globalStringVariablesPL {
     //Main menu
     String mainMenuHeader = "Wybierz co chcesz zrobić";
     String mainMenuEntry[] = {
-            "1 Dodaj nowy produkt",
-            "2 Usuń produkt z listy",
-            "3 Wyświetl aktualną listę zakupów",
-            "4 Sprawdź czy konkretny produkt już jest na liście",
+            "1 - Dodaj nowy produkt",
+            "2 - Usuń produkt z listy",
+            "3 - Wyświetl aktualną listę zakupów",
+            "4 - Sprawdź czy konkretny produkt już jest na liście",
             "Aby zakończyć podaj inną wartość cyfrową"
     };
 

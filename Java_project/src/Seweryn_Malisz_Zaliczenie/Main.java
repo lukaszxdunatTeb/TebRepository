@@ -14,8 +14,19 @@ package Seweryn_Malisz_Zaliczenie;
 
             boolean czyKoniecProgramu = false;
 
-            do{
+            //do{
+                System.out.println(text.globalHello);
 
-            } while (czyKoniecProgramu);
+                System.out.println(text.mainMenuHeader);
+                System.out.println(text.mainMenuEntry[0]);
+                System.out.println(text.mainMenuEntry[1]);
+                System.out.println(text.mainMenuEntry[2]);
+                System.out.println(text.mainMenuEntry[3]);
+
+                System.out.println(text.mainMenuEntry[text.mainMenuEntry.length-1]);
+                System.out.print("> ");
+
+            //} while (czyKoniecProgramu);
+            System.out.println(text.globallGoodBye);
         }
     }
