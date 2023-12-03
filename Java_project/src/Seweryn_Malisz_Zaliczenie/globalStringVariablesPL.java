@@ -24,5 +24,8 @@ public class globalStringVariablesPL {
             "Aby zakończyć podaj inną wartość cyfrową"
     };
 
+    String addEntryAddName = "Podaj opis produktu: ";
+    String addEntryAddValue = "Podaj ilość do zakupu: ";
+
     String globallGoodBye = "Dziękujemy za korzystanie z programu listy zakupów";
 }

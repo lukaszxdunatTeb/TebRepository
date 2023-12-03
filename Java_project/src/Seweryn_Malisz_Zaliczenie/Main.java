@@ -10,49 +10,54 @@ package Seweryn_Malisz_Zaliczenie;
     public class Main {
         public static void main(String[] args) {
 
-            globalStringVariablesPL text = new globalStringVariablesPL();
+            globalStringVariablesPL text = new globalStringVariablesPL();                   //Przygotowanie obsługi tekstu
 
-            //klasaTypuZmiennejListyZakupów listaZakupów = new klasaTypuZmiennejListyZakupów(); - mniej wiecej coś takiego
+            shoppingListClass shoppingList = new shoppingListClass();                       //Przygotowanie obsługi listy zakupów
 
-            boolean programExecution = true;
+            boolean programExecution = true;                                                //Warunek wykonywania się programu - jego zmiana kończy program
 
             System.out.println(text.globalHello);
 
             do{
 
-                System.out.println(text.mainMenuHeader);
+                System.out.println(text.mainMenuHeader);                                    //
+                                                                                            //
+                System.out.println(text.mainMenuEntry[0]);                                  //
+                System.out.println(text.mainMenuEntry[1]);                                  //
+                System.out.println(text.mainMenuEntry[2]);                                  //      Menu główne programu
+                System.out.println(text.mainMenuEntry[3]);                                  //
+                                                                                            //
+                System.out.println(text.mainMenuEntry[text.mainMenuEntry.length-1]);        //
+                System.out.print("> ");                                                     //
 
-                System.out.println(text.mainMenuEntry[0]);
-                System.out.println(text.mainMenuEntry[1]);
-                System.out.println(text.mainMenuEntry[2]);
-                System.out.println(text.mainMenuEntry[3]);
+                switch ( inputDataClass.get_Value_Int() ) {
+                    case 1:                                                                 //Dodaj nowy wpis
+                        System.out.print(text.addEntryAddName);
+                        String inputName = inputDataClass.get_Value_String();
+                        System.out.print(text.addEntryAddValue);
+                        int inputValue = inputDataClass.get_Value_Int();
+                        shoppingList.addNewElement(inputName,inputValue);
+                        break;
 
-                System.out.println(text.mainMenuEntry[text.mainMenuEntry.length-1]);
-                System.out.print("> ");
-
-                switch (inputDataClass.get_Value_Int()){
-                    case 1:                 //Dodaj nowy wpis
+                    case 2:                                                                 //Usuń wpis
 
                         break;
 
-                    case 2:                 //Usuń wpis
+                    case 3:                                                                 //Wyświetl wszystkie wpisy
 
                         break;
 
-                    case 3:                 //Wyświetl wszystkie wpisy
+                    case 4:                                                                 //Wyszukaj i wyświetl wpis wpis
 
                         break;
 
-                    case 4:                 //Wyszukaj i wyświetl wpis wpis
-
-                        break;
-
-                    default:                 //Zakończ program
+                    default:                                                                //Zakończ program
                         programExecution = false;
                         break;
                 }
 
             } while (programExecution);
+
             System.out.println(text.globallGoodBye);
         }
     }
