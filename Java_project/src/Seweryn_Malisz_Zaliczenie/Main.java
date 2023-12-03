@@ -12,9 +12,9 @@ package Seweryn_Malisz_Zaliczenie;
 
             globalStringVariablesPL text = new globalStringVariablesPL();
 
-            boolean czyKoniecProgramu = false;
+            boolean programExecution = true;
 
-            //do{
+            do{
                 System.out.println(text.globalHello);
 
                 System.out.println(text.mainMenuHeader);
@@ -26,7 +26,17 @@ package Seweryn_Malisz_Zaliczenie;
                 System.out.println(text.mainMenuEntry[text.mainMenuEntry.length-1]);
                 System.out.print("> ");
 
-            //} while (czyKoniecProgramu);
+                switch (inputDataClass.get_Value_Int()){
+                    case 1:
+
+                        break;
+                        
+                    default:
+                        programExecution = false;
+                        break;
+                }
+
+            } while (programExecution);
             System.out.println(text.globallGoodBye);
         }
     }
