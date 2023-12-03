@@ -1,0 +1,15 @@
+Stwórz prostą aplikację do zarządzania listą zakupów.
+1. Dodawanie produktów do listy:
+Użytkownik ma możliwość wprowadzenia nazwy produktu, który chce dodać do listy zakupów.
+2. Usuwanie produktów z listy:
+Użytkownik może podać nazwę produktu, który chce usunąć z listy zakupów. Tablica[i].equals(Nazwa Produktu DoSprawdzenia)
+Jeśli produkt znajduje się na liście, zostaje usunięty, a pozostałe elementy
+przesuwane są, aby wypełnić lukę. (Jako ostatnie)
+3. Wyświetlanie listy zakupów:
+Program wyświetla całą listę zakupów w formie numerowanej, prezentując nazwy produktów.
+4. Sprawdzanie czy produkt jest na liście:
+Użytkownik może wprowadzić nazwę produktu, aby sprawdzić, czy znajduje się on już na liście zakupów.
+Tablica[i].equals(Nazwa Produktu DoSprawdzenia)
+Program informuje użytkownika, czy dany produkt jest obecny na liście.
+5. Zakończenie działania programu:
+Użytkownik ma możliwość zakończenia działania programu.

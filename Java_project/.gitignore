@@ -1,2 +1,3 @@
-##Path to exclude
-out
+.gitignore
+.vscode/
+.idea/
