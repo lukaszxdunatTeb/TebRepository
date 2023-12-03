@@ -1,59 +1,40 @@
+import java.awt.*;
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Podaj pierwszą liczbę: ");
-        double number1 = scanner.nextDouble();
-
-        System.out.println("Podaj drugą liczbę");
-        double number2 = scanner.nextDouble();
-
-        System.out.println("Wybierz operacje (1 - dodawanie, 2 - odejmowanie, 3 - mnożenie, 4 - dzielenie): ");
-        int operation = scanner.nextInt();
-
-        double result = 0;
-
-        switch (operation) {
-            case 1:
-                result = addition(number1, number2);
-                break;
-            case 2:
-                result = subtraction(number1, number2);
-                break;
-            case 3:
-                result = multiplication(number1, number2);
-                break;
-            case 4:
-                result = division(number1, number2);
-                break;
-            default:
-                System.out.println("Nieprawidłowy wybór operacji.");
-                break;
+        System.out.println("Witam w liście zakupów!");
+        System.out.println("Aby zakończyć działanie programu napisz 'koniec' ");
+        String[] Tablicazakupów;
+        Tablicazakupów = new String[10];
+        Tablicazakupów[0] = "Mleko";
+        Tablicazakupów[1] = "Chleb";
+        Tablicazakupów[2] = "Masło";             ////tablica produktów
+        Tablicazakupów[3] = "Zgrzewka wody ";
+        Tablicazakupów[4] = "Makaron";
+        Tablicazakupów[5] = "Pomidory";
+        System.out.println("Aktualna Lista zakupów :");
+        for (int i = 0; i < Tablicazakupów.length; i++) {
+            System.out.println(Tablicazakupów[i]);
         }
+        while (true) {
+            System.out.println("Proszę podaj produkt nowy produkt ?");/////Dodawanie nowycch produktów
+            String produkt = scanner.next();
 
-        System.out.println("Wynik: " + result);
-    }
+            if (produkt.equalsIgnoreCase("koniec")) {
+                System.out.println("program zosta zakończony");
+                return;
+            }
 
-    private static double addition(double a, double b) {
-        return a + b;
-    }
 
-    private static double subtraction(double a, double b) {
-        return a - b;
-    }
+            System.out.println("czy chcesz usunąć produkt z listy ?");
 
-    private static double multiplication(double a, double b) {
-        return a * b;
-    }
 
-    private static double division(double a, double b) {
-        if (b != 0) {
-            return a / b;
-        } else {
-            System.out.println("Nie można dzielić przez zero.");
-            return 0;
+
         }
     }
 }
+
+    ////// git commit-m "opis zmian" = To kolejny commit który posiada nowa wersję  kodu który pisaliśmy .
+    ///// git clone<adress repo> =  używamy go gdy chcemy pobrać projekt/zadanie ze zdalnego repozytorium które eznajduję się np na githubie.
+    /////   git checkout <nazwa_gałęzi> = używamy ją gdy chcemy przejśc na nowy/inny brunch
