@@ -1,36 +1,70 @@
 import java.util.Scanner;
-import javax.swing.*;
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String input;
-        System.out.println("### Witaj w konwenterze temperatury.   ###");
-        System.out.println("### Aby zakończyć działanie programu,  ###");
-        System.out.println("### w dowolnym momencie wpisz 'koniec' ###");
-        while(true){
-            System.out.println();
-            System.out.println("Proszę podaj temperaturę: ");
-            input = scanner.nextLine();
-            if (input.equalsIgnoreCase("koniec"))
-                return;
-            float odczyttemp = Float.parseFloat(input);
-            System.out.println(" 1.Fahrenheit na Celsiusz");
-            System.out.println(" 2.Celsiusz na Fahrenheit");
-            System.out.println("Wybierz przelicznik: ");
-            input = scanner.nextLine();
-            if (input.equalsIgnoreCase("koniec"))
-                return;
-            switch (Integer.parseInt(input)) {
-                case 1:
-                    System.out.println( "Stopnie Celsiusza: "  +  ((odczyttemp - 32) * 5/9));
-                    break;
-                case 2:
-                    System.out.println( "Stopnie Fahrenheit: "  +  ((odczyttemp * 9/5) + 32));
-                    break;
-                default:
-                    System.out.println( "Nie wybrano żadnego przelicznika" );
-                    break;
+import javax.swing.*:
+import java.util.Scanner;
+
+
+        public class Main {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                /// zmienna do pętli while
+                boolean działanieprogramu = true;
+                String[] lista = new String[5];                        // DEKLARACJA TABLICY
+                while (działanieprogramu) {
+                    System.out.println("### witam w liście zakupów ###");
+                    System.out.println("Wybierz opcję która cię interesuje. ");
+                    System.out.println("1.Dodawanie produktów do listy. ");
+                    System.out.println("2.Usuwanie produktów z listy.   ");                    /// menu
+                    System.out.println("3.Wyświetlanie listy zakupów.   ");
+                    System.out.println("4.Sprawdzanie czy produkt jest na liście.  ");
+                    System.out.println("5.Zakończenie działania programu:    ");
+                    int wybór = scanner.nextInt();
+                    switch (wybór) {
+
+                        case 1:                                                      /// Dodawanie produktu
+                            System.out.println("Nazwa produktu który chcesz dodać :");
+                            String nowyprodukt;
+                            nowyprodukt= scanner.next();
+
+                            break;
+
+                        case 2:                                                     ////Usuwanie produktów
+
+
+
+
+                            break;
+
+                        case 3:                                                     ///// wyświetlanie
+                            for(int i = 0; i < lista.length; i++ ) {
+                                System.out.println(lista[i]);
+
+                            }
+                            break;
+                        case 4 :                                                    ///// Sprawdzanie
+
+
+
+
+                            break;
+                        case 5:
+                            System.out.println(" Dziekuję za skorzystanie z  listy zakupów");  //// zakońćzenie
+                            return;
+
+
+                        default:
+                            System.out.println("Nie wybrałeś opcji ,prosze wybierz opcję ponownie !");
+                            break;
+
+
+
+
+
+
+                    }
+                }
+
             }
         }
-    }
-}
+
+
+
