@@ -50,8 +50,13 @@ package Seweryn_Malisz_Zaliczenie;
                         break;
 
                     case 4:                                                                 //Wyszukaj i wyświetl wpis wpis
-                        System.out.println(text.findEntryName);
-                        System.out.println(shoppingList.findExistingItem(inputDataClass.get_Value_String())+1);
+                        System.out.print(text.findEntryName);
+                        int wyszukanyIndeks = shoppingList.findExistingItem( inputDataClass.get_Value_String());
+                        if( wyszukanyIndeks  > -1 ){
+                            System.out.println(text.findEntryPass+(wyszukanyIndeks+1));
+                        } else {
+                            System.out.println(text.findEntryFail);
+                        }
                         break;
 
                     default:                                                                //Zakończ program
