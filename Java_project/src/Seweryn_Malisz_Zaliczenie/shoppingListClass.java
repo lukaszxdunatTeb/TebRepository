@@ -33,4 +33,11 @@ package Seweryn_Malisz_Zaliczenie;
                 shoppingListEntry[entriesAmount] = new shoppingListElement(inputName, inputValue);
             }
         }
+
+        int findExistingItem(String name){
+            for ( int i = 0; i < shoppingListEntry.length; i++){
+                if(shoppingListEntry[i].EntryValue.equals(name)){return i;}
+            }
+            return -1;
+        }
     }

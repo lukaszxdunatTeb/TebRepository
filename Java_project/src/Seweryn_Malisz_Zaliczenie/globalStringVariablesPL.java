@@ -27,5 +27,11 @@ public class globalStringVariablesPL {
     String addEntryAddName = "Podaj opis produktu: ";
     String addEntryAddValue = "Podaj ilość do zakupu: ";
 
+    String findEntryName = "Podaj nazwę wyszukiwanego elementu: ";
+
+    String findEntryPass = "Podany element znajduje się na liście pod indeksem ";
+
+    String findEntryFail = "Podanego elementu nie ma na liście";
+
     String globallGoodBye = "Dziękujemy za korzystanie z programu listy zakupów";
 }
