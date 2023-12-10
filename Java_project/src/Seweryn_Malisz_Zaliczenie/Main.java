@@ -50,17 +50,21 @@ package Seweryn_Malisz_Zaliczenie;
                                 System.out.println(shoppingList.shoppingListEntry[i].EntryValue + " x" + shoppingList.shoppingListEntry[i].EntryAmount);
                             }
                         } else {
-
+                            System.out.println(text.emptyList);
                         }
                         break;
 
                     case 4:                                                                 //Wyszukaj i wyświetl wpis wpis
-                        System.out.print(text.findEntryName);
-                        int foundIndex = shoppingList.findExistingItem( inputDataClass.get_Value_String() );
-                        if( foundIndex  > -1 ){
-                            System.out.println(text.findEntryPass+(foundIndex+1));
+                        if ( shoppingList.entriesAmount > 0 ) {
+                            System.out.print(text.findEntryName);
+                            int foundIndex = shoppingList.findExistingItem(inputDataClass.get_Value_String());
+                            if (foundIndex > -1) {
+                                System.out.println(text.findEntryPass + (foundIndex + 1));
+                            } else {
+                                System.out.println(text.findEntryFail);
+                            }
                         } else {
-                            System.out.println(text.findEntryFail);
+                            System.out.println(text.emptyList);
                         }
                         break;
 

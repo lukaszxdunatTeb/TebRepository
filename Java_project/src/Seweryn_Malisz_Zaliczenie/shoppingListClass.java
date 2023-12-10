@@ -32,7 +32,7 @@ package Seweryn_Malisz_Zaliczenie;
                 tmp[tmp.length-1] = new shoppingListElement(inputName, inputValue);
                 shoppingListEntry = tmp;
             } else {                                                                // Gdy autentyczna ilość wpisów jest mniejsza niż rozmiar tablicy wpisujemy na indeks o wartości równej ilości faktycznych wpisów
-                shoppingListEntry[entriesAmount] = new shoppingListElement(inputName, inputValue);
+                shoppingListEntry[entriesAmount - 1] = new shoppingListElement(inputName, inputValue);
             }
         }
 
