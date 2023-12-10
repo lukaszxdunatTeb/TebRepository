@@ -27,6 +27,11 @@ public class globalStringVariablesPL {
     String addEntryAddName = "Podaj opis produktu: ";
     String addEntryAddValue = "Podaj ilość do zakupu: ";
 
+    String addEntryExistingValue = "Podany element już istnieje na liście. Czy chcesz zaktualizować aktualną ilość o podaną?\n" +
+            "- Naciśnij 1 by potwierdzić\n" +
+            "- Inną wartość syfrową by usunąć";
+
+    String addEntryExistingDiscard = "Zrezygnowano z aktualizowania ilości";
     String findEntryName = "Podaj nazwę wyszukiwanego elementu: ";
 
     String findEntryPass[] = {

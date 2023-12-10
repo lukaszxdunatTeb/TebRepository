@@ -21,18 +21,27 @@ package Seweryn_Malisz_Zaliczenie;
             }
         }
         void addNewElement(String inputName, int inputValue){
+            int existingIndex = findExistingItem( inputName );
+            if ( existingIndex == -1) {                                  // Sprawdzanie czy dodawany element już istnieje na liście
+                entriesAmount++;                                                        // Zwiększenie faktycznej ilości wpisów o 1
 
-            entriesAmount++;                                                        // Zwiększenie faktycznej ilości wpisów o 1
-
-            if(entriesAmount>shoppingListEntry.length){                             // Sprawdzenie czy faktyczna ilość wpisów jest większa niż aktualny rozmiar tablicy
-                shoppingListElement tmp[] = new shoppingListElement[entriesAmount]; // Tymczasowa tablica listy zakupów do powiększenia tej faktycznej
-                for(int i = 0; i < shoppingListEntry.length; i++){                  // Kopiowanie danych do listy tymczasowej
-                    tmp[i] = shoppingListEntry[i];
+                if (entriesAmount > shoppingListEntry.length) {                             // Sprawdzenie czy faktyczna ilość wpisów jest większa niż aktualny rozmiar tablicy
+                    shoppingListElement tmp[] = new shoppingListElement[entriesAmount]; // Tymczasowa tablica listy zakupów do powiększenia tej faktycznej
+                    for (int i = 0; i < shoppingListEntry.length; i++) {                  // Kopiowanie danych do listy tymczasowej
+                        tmp[i] = shoppingListEntry[i];
+                    }
+                    tmp[tmp.length - 1] = new shoppingListElement(inputName, inputValue);
+                    shoppingListEntry = tmp;
+                } else {                                                                // Gdy autentyczna ilość wpisów jest mniejsza niż rozmiar tablicy wpisujemy na indeks o wartości równej ilości faktycznych wpisów
+                    shoppingListEntry[entriesAmount - 1] = new shoppingListElement(inputName, inputValue);
                 }
-                tmp[tmp.length-1] = new shoppingListElement(inputName, inputValue);
-                shoppingListEntry = tmp;
-            } else {                                                                // Gdy autentyczna ilość wpisów jest mniejsza niż rozmiar tablicy wpisujemy na indeks o wartości równej ilości faktycznych wpisów
-                shoppingListEntry[entriesAmount - 1] = new shoppingListElement(inputName, inputValue);
+            } else {
+                System.out.println(text.addEntryExistingValue);
+                if ( inputDataClass.get_Value_Int() == 1 ){
+                    shoppingListEntry[ existingIndex ].EntryAmount += inputValue;
+                } else {
+                    System.out.println(text.addEntryExistingDiscard);
+                }
             }
         }
 
