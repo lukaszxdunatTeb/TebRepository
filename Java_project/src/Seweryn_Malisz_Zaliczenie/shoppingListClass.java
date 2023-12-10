@@ -24,8 +24,8 @@ package Seweryn_Malisz_Zaliczenie;
 
             int existingIndex = findExistingItem( inputName );                              //
                                                                                             // Sprawdzanie czy dodawany element już istnieje na liście
-            if ( existingIndex == -1) {                                                     //
-                
+            if ( existingIndex == -1) {                                                     // Jeśli funkcja zwróci wartość -1 oznacza to, że elementu nie ma na liście i podejmujemy operacje dodania go
+
                 entriesAmount++;                                                            // Zwiększenie faktycznej ilości wpisów o 1
 
                 if (entriesAmount > shoppingListEntry.length) {                             // Sprawdzenie czy faktyczna ilość wpisów jest większa niż aktualny rozmiar tablicy
@@ -38,12 +38,12 @@ package Seweryn_Malisz_Zaliczenie;
                 } else {                                                                    // Gdy autentyczna ilość wpisów jest mniejsza niż rozmiar tablicy wpisujemy na indeks o wartości równej ilości faktycznych wpisów
                     shoppingListEntry[entriesAmount - 1] = new shoppingListElement(inputName, inputValue);
                 }
-            } else {
+            } else {                                                                        // W przypadku gdy podczas sprawdzania czy element istnieje dostaniemy wartość większą od -1 oznacza to, że element istnieje na liście
                 System.out.println(text.addEntryExistingValue);
-                if ( inputDataClass.get_Value_Int() == 1 ){
-                    shoppingListEntry[ existingIndex ].EntryAmount += inputValue;
+                if ( inputDataClass.get_Value_Int() == 1 ){                                 // Pyatmy użytkownika czy chce zwiększyć ilość produktu który chce kupić o żądaną wartość
+                    shoppingListEntry[ existingIndex ].EntryAmount += inputValue;           // Jeśli chce wciska 1
                 } else {
-                    System.out.println(text.addEntryExistingDiscard);
+                    System.out.println(text.addEntryExistingDiscard);                       // Jeśli uzytkownik odmówi aktualizacji pojawia się komunikat o rezygnacji
                 }
             }
         }
@@ -61,15 +61,15 @@ package Seweryn_Malisz_Zaliczenie;
             if ( index > -1 ) {                                                     // Jeżeli indeks nie jest mniejszy od 0 to znaczy, że element jest na liście
                 entriesAmount--;                                                    // Zmniejszenie ilości wpisów o 1
 
-                for ( int i = index; i<entriesAmount; i++){                         //
-                    shoppingListEntry[i]=shoppingListEntry[i+1];                    // Usunięcie szukanego elementu i przesunięce elementów tablicy o jeden wstecz
+                for ( int i = index; i < entriesAmount; i++){                         //
+                    shoppingListEntry[i] = shoppingListEntry[ i+1 ];                    // Usunięcie szukanego elementu i przesunięce elementów tablicy o jeden wstecz
                 }                                                                   //
 
-                shoppingListEntry[entriesAmount] = null;                          // Wyczyszczenie ostatniego wpisu na liście
+                shoppingListEntry[ entriesAmount ] = null;                          // Wyczyszczenie ostatniego wpisu na liście
 
                 System.out.println( text.deleteEntryPass[0] + name + text.deleteEntryPass[1] + ( index + 1 ) );     // Potwierdzenie usunięcia komunikatem
             } else {
-                System.out.println(text.findEntryFail);                             // W przypadku nie odnalezienia elementu wyświetlenie odpowiedniego komunikatu
+                System.out.println( text.findEntryFail );                             // W przypadku nie odnalezienia elementu wyświetlenie odpowiedniego komunikatu
             }
         }
     }
