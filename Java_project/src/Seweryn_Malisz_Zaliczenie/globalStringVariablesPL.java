@@ -33,5 +33,14 @@ public class globalStringVariablesPL {
 
     String findEntryFail = "Podanego elementu nie ma na liście";
 
+    String deleteEntryName = "Podaj nazwę elementu do usunięcia: ";
+
+    String deleteEntryPass[] = {
+            "Usunięto wpis \"",
+            "\" na indeksie "
+    } ;
+
+    String emptyList = "Lista zakupów jest pusta";
+
     String globallGoodBye = "Dziękujemy za korzystanie z programu listy zakupów";
 }

@@ -44,18 +44,20 @@ package Seweryn_Malisz_Zaliczenie;
         }
 
         void deleteExistingItem(String name){
-            int index = findExistingItem(name);
+            int index = findExistingItem(name);                                     // Odnalezienie indeksu wyszukiwanego elementu
 
-            if ( index > -1 ) {
-                entriesAmount--;
+            if ( index > -1 ) {                                                     // Jeżeli indeks nie jest mniejszy od 0 to znaczy, że element jest na liście
+                entriesAmount--;                                                    // Zmniejszenie ilości wpisów o 1
 
-                for ( int i = index; i<entriesAmount; i++){
-                    shoppingListEntry[i]=shoppingListEntry[i+1];
-                }
+                for ( int i = index; i<entriesAmount; i++){                         //
+                    shoppingListEntry[i]=shoppingListEntry[i+1];                    // Usunięcie szukanego elementu i przesunięce elementów tablicy o jeden wstecz
+                }                                                                   //
 
-                shoppingListEntry[entriesAmount+1] = null;
+                shoppingListEntry[entriesAmount] = null;                          // Wyczyszczenie ostatniego wpisu na liście
+
+                System.out.println( text.deleteEntryPass[0] + name + text.deleteEntryPass[1] + ( index + 1 ) );     // Potwierdzenie usunięcia komunikatem
             } else {
-                System.out.println(text.findEntryFail);
+                System.out.println(text.findEntryFail);                             // W przypadku nie odnalezienia elementu wyświetlenie odpowiedniego komunikatu
             }
         }
     }

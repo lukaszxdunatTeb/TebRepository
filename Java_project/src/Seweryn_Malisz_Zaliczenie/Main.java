@@ -40,12 +40,17 @@ package Seweryn_Malisz_Zaliczenie;
                         break;
 
                     case 2:                                                                 //Usuń wpis
-
+                        System.out.print( text.deleteEntryName );
+                        shoppingList.deleteExistingItem( inputDataClass.get_Value_String() );
                         break;
 
                     case 3:                                                                 //Wyświetl wszystkie wpisy
-                        for (int i = 0; i < shoppingList.entriesAmount; i++){
-                            System.out.println(shoppingList.shoppingListEntry[i].EntryValue+" x"+shoppingList.shoppingListEntry[i].EntryAmount);
+                        if ( shoppingList.entriesAmount > 0 ) {
+                            for (int i = 0; i < shoppingList.entriesAmount; i++) {
+                                System.out.println(shoppingList.shoppingListEntry[i].EntryValue + " x" + shoppingList.shoppingListEntry[i].EntryAmount);
+                            }
+                        } else {
+
                         }
                         break;
 
