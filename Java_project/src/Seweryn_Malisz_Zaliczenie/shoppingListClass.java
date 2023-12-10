@@ -9,6 +9,8 @@ package Seweryn_Malisz_Zaliczenie;
 
         shoppingListElement shoppingListEntry[] = new shoppingListElement[0];       // Lista zakupów
         int entriesAmount = 0;                                                      // Faktyczna ilość wpisów na liście
+
+        globalStringVariablesPL text = new globalStringVariablesPL();
         class shoppingListElement{                                                  // Klasa wpisu na liście zakupów. Zawiera opis i ilość
             String EntryValue;                                                      // Opis/nazwa produktu
             int EntryAmount;                                                        // Ilość danego produktu do zakupu
@@ -36,12 +38,24 @@ package Seweryn_Malisz_Zaliczenie;
 
         int findExistingItem(String name){                                          // Funkcja wyszukiwania elementu - zwraca indeks elementu na liście na którym można później operować
             for ( int i = 0; i < shoppingListEntry.length; i++){
-                if(shoppingListEntry[i].EntryValue.toLowerCase().equals(name.toLowerCase())){ return i; }       // Sprawdzanie czy element jest na liście - jesli tak zwracany jest indeks i przerywane jest działanie funkcji
+                if( shoppingListEntry[i].EntryValue.toLowerCase().equals( name.toLowerCase() ) ){ return i; }       // Sprawdzanie czy element jest na liście - jesli tak zwracany jest indeks i przerywane jest działanie funkcji
             }
             return -1;                                                              // W przypadku gdy nie ma elementu na liście zwracana jest wartość -1
         }
 
         void deleteExistingItem(String name){
+            int index = findExistingItem(name);
 
+            if ( index > -1 ) {
+                entriesAmount--;
+
+                for ( int i = index; i<entriesAmount; i++){
+                    shoppingListEntry[i]=shoppingListEntry[i+1];
+                }
+
+                shoppingListEntry[entriesAmount+1] = null;
+            } else {
+                System.out.println(text.findEntryFail);
+            }
         }
     }
