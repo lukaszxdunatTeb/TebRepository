@@ -29,7 +29,10 @@ public class globalStringVariablesPL {
 
     String findEntryName = "Podaj nazwę wyszukiwanego elementu: ";
 
-    String findEntryPass = "Podany element znajduje się na liście pod indeksem ";
+    String findEntryPass[] = {
+            "Podany element znajduje się na liście pod indeksem ",
+            ". Aktualna ilość do zakupu: "
+    };
 
     String findEntryFail = "Podanego elementu nie ma na liście";
 

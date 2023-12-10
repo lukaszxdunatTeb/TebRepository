@@ -47,7 +47,7 @@ package Seweryn_Malisz_Zaliczenie;
                     case 3:                                                                 //Wyświetl wszystkie wpisy
                         if ( shoppingList.entriesAmount > 0 ) {
                             for (int i = 0; i < shoppingList.entriesAmount; i++) {
-                                System.out.println(shoppingList.shoppingListEntry[i].EntryValue + " x" + shoppingList.shoppingListEntry[i].EntryAmount);
+                                System.out.println( (i+1)+". "+shoppingList.shoppingListEntry[i].EntryValue + " x" + shoppingList.shoppingListEntry[i].EntryAmount);
                             }
                         } else {
                             System.out.println(text.emptyList);
@@ -59,7 +59,7 @@ package Seweryn_Malisz_Zaliczenie;
                             System.out.print(text.findEntryName);
                             int foundIndex = shoppingList.findExistingItem(inputDataClass.get_Value_String());
                             if (foundIndex > -1) {
-                                System.out.println(text.findEntryPass + (foundIndex + 1));
+                                System.out.println(text.findEntryPass[0] + (foundIndex + 1) + text.findEntryPass[1] + shoppingList.shoppingListEntry[foundIndex].EntryAmount );
                             } else {
                                 System.out.println(text.findEntryFail);
                             }

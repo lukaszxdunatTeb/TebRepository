@@ -9,6 +9,8 @@ Stwórz prostą aplikację do zarządzania listą zakupów.
 	Użytkownik może podać nazwę produktu, który chce usunąć z listy zakupów. Tablica[i].equals(Nazwa Produktu DoSprawdzenia)
 	Jeśli produkt znajduje się na liście, zostaje usunięty, a pozostałe elementy
 	przesuwane są, aby wypełnić lukę. (Jako ostatnie)
+
+	ZROBIONE
 	
 3. Wyświetlanie listy zakupów:
 	Program wyświetla całą listę zakupów w formie numerowanej, prezentując nazwy produktów.
