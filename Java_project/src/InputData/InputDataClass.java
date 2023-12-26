@@ -11,19 +11,18 @@ public class InputDataClass {
         } catch (Exception e) {
             System.out.println("Podano złą wartość. Spróbuj jeszcze raz.");
         }
-    } while(true);
+    } while (true);
 }
 
     public static int getValueInt() {
         do {
             try {
                 Scanner consoleInput = new Scanner(System.in);
-
                 return consoleInput.nextInt();
             } catch (Exception e) {
                 System.out.println("Podano złą wartość. Spróbuj jeszcze raz.");
             }
-        } while(true);
+        } while (true);
     }
 
     public static String getValueString() {

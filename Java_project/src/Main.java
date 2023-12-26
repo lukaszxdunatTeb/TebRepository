@@ -8,27 +8,37 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class Main {
-    private static ResourceBundle resourceBundle;
+    private static ResourceBundle textContainer;
 
-    static InputDataClass input = new InputDataClass();
+    private static InputDataClass input = new InputDataClass();
     public static void main(String[] args) {
 
         //Wybór języka
         selectLanguage();
 
         //Powitanie
-        System.out.println(resourceBundle.getString("global_hello"));
+        System.out.println(textContainer.getString("global_hello"));
 
-        //Wypisanie menu głównego
+        //Zmienna decydująca o tym czy program ma się wykonywać
+        boolean ifProgramIsExecuting = true;
+        do {
+            //Wypisanie menu głównego
+            showMainMenu();
+            switch (input.getValueInt()){
+
+                default:
+                    ifProgramIsExecuting = false;
+            }
+        } while (ifProgramIsExecuting);
 
         //Zakończenie programu - pożegnanie
-        System.out.println(resourceBundle.getString("global_goodbye"));
+        System.out.println(textContainer.getString("global_goodbye"));
     }
 
     //Funkcja ustawienia języka programu
     private static void setLocale(String language) {
         Locale locale = new Locale(language);
-        resourceBundle = ResourceBundle.getBundle("LanguagePack", locale);
+        textContainer = ResourceBundle.getBundle("LanguagePack", locale);
     }
 
     //Funkcja wyboru języka programu
@@ -51,13 +61,21 @@ public class Main {
         } while (languageNotSelected);
     }
 
+    //Funkcja wypisywania menu głównego
     private static void showMainMenu(){
-        //Nagłówek menu -
-        System.out.println(resourceBundle.getString("main_menu_header"));
-        System.out.println(resourceBundle.getString("main_menu_entry_add_new_item"));
-        System.out.println(resourceBundle.getString("main_menu_entry_remove_item_from_list"));
-        System.out.println(resourceBundle.getString("main_menu_entry_show_current_list"));
-        System.out.println(resourceBundle.getString("main_menu_entry_check_item"));
-        System.out.println(resourceBundle.getString("main_menu_entry_close_program"));
+        //Nagłówek menu - prośba o wybór opcji
+        System.out.println(textContainer.getString("main_menu_header"));
+
+        //Opcja dodawania nowego elementu
+        String addItem = textContainer.getString("main_menu_entry_add_new_item");
+        System.out.println(addItem);
+        //Opcja usuwania elementu z listy
+        System.out.println(textContainer.getString("main_menu_entry_remove_item_from_list"));
+        //Wyświetlanie całej listy zakupów
+        System.out.println(textContainer.getString("main_menu_entry_show_current_list"));
+        //Opcja wyszukania i wyświetlenia konkretnego elementu z listy
+        System.out.println(textContainer.getString("main_menu_entry_check_item"));
+        //Informacja o sposobie zakończenia programu - naciśnięcie dowolnego innego klawisza
+        System.out.println(textContainer.getString("main_menu_entry_close_program"));
     }
 }
