@@ -30,57 +30,19 @@ public class Main {
             switch (input.getValueInt()){
                 //Dodawanie nowego elementu do listy
                 case 1:
-                    System.out.print(textContainer.getString("add_new_item_entry_set_name"));
-                    String inputName = input.getValueString();
-                    System.out.print(textContainer.getString("add_new_item_entry_set_value"));
-                    int inputValue = input.getValueInt();
-
-                    int indexOfItemToUpdate = shoppingList.returnItemIndex(inputName);
-                    if(indexOfItemToUpdate > -1){
-                        System.out.println(textContainer.getString("add_new_item_entry_item_exists"));
-                        if(input.getValueString().toLowerCase().equals("y")){
-                            shoppingList.updateAmountOfItemOnList(indexOfItemToUpdate,inputValue);
-                        }
-                    } else {
-                        shoppingList.addNewItemToTheList(inputName,inputValue);
-                    }
-
+                    newItemEntry();
                     break;
                 //Usuwanie elementu z listy
                 case 2:
-                    if(shoppingList.returnProductsAmount() > 0) {
-                        System.out.print(textContainer.getString("remove_item_from_list_entry_put_name"));
-                        if(shoppingList.removeItemFromList(input.getValueString())==1){
-                            System.out.println(textContainer.getString("remove_item_from_list_entry_pass"));
-                        } else {
-                            System.out.println(textContainer.getString("remove_item_from_list_entry_fail"));
-                        }
-                      } else {
-                        System.out.println(textContainer.getString("show_current_list_entry_empty_list"));
-                      }
+                    removeItemEntry();
                     break;
                 //Wyświetlenie listy zakupów
                 case 3:
-                    if(shoppingList.returnProductsAmount() > 0) {
-                        System.out.println(textContainer.getString("show_current_list_entry_info"));
-                        shoppingList.returnWholeShoppingList();
-                    } else {
-                        System.out.println(textContainer.getString("show_current_list_entry_empty_list"));
-                    }
+                    showWholeShoppingListEntry();
                     break;
                 //Wyszukanie elementu na liście
                 case 4:
-                    if(shoppingList.returnProductsAmount() > 0) {
-                        System.out.print(textContainer.getString("check_item_entry_put_name"));
-                        int indexOfSearchingItem = shoppingList.returnItemIndex(input.getValueString());
-                        if(indexOfSearchingItem > -1){
-                            System.out.println(textContainer.getString("check_item_entry_pass") + (indexOfSearchingItem+1));
-                        } else {
-                            System.out.println(textContainer.getString("check_item_entry_fail"));
-                        }
-                    } else {
-                        System.out.println(textContainer.getString("show_current_list_entry_empty_list"));
-                    }
+                    findExactItemEntry();
                     break;
                 // Zamykanie programu
                 default:
@@ -134,5 +96,58 @@ public class Main {
         System.out.println(textContainer.getString("main_menu_entry_check_item"));
         //Informacja o sposobie zakończenia programu - naciśnięcie dowolnego innego klawisza
         System.out.println(textContainer.getString("main_menu_entry_close_program"));
+    }
+
+    private static void newItemEntry(){
+        System.out.print(textContainer.getString("add_new_item_entry_set_name"));
+        String inputName = input.getValueString();
+        System.out.print(textContainer.getString("add_new_item_entry_set_value"));
+        int inputValue = input.getValueInt();
+
+        int indexOfItemToUpdate = shoppingList.returnItemIndex(inputName);
+        if(indexOfItemToUpdate > -1){
+            System.out.println(textContainer.getString("add_new_item_entry_item_exists"));
+            if(input.getValueString().toLowerCase().equals("y")){
+                shoppingList.updateAmountOfItemOnList(indexOfItemToUpdate,inputValue);
+            }
+        } else {
+            shoppingList.addNewItemToTheList(inputName,inputValue);
+        }
+    }
+
+    private static void removeItemEntry(){
+        if(shoppingList.returnProductsAmount() > 0) {
+            System.out.print(textContainer.getString("remove_item_from_list_entry_put_name"));
+            if(shoppingList.removeItemFromList(input.getValueString())==1){
+                System.out.println(textContainer.getString("remove_item_from_list_entry_pass"));
+            } else {
+                System.out.println(textContainer.getString("remove_item_from_list_entry_fail"));
+            }
+        } else {
+            System.out.println(textContainer.getString("global_empty_list"));
+        }
+    }
+
+    private static void showWholeShoppingListEntry(){
+        if(shoppingList.returnProductsAmount() > 0) {
+            System.out.println(textContainer.getString("show_current_list_entry_info"));
+            shoppingList.returnWholeShoppingList();
+        } else {
+            System.out.println(textContainer.getString("show_current_list_entry_empty_list"));
+        }
+    }
+
+    private static void findExactItemEntry(){
+        if(shoppingList.returnProductsAmount() > 0) {
+            System.out.print(textContainer.getString("check_item_entry_put_name"));
+            int indexOfSearchingItem = shoppingList.returnItemIndex(input.getValueString());
+            if(indexOfSearchingItem > -1){
+                System.out.println(textContainer.getString("check_item_entry_pass") + (indexOfSearchingItem+1));
+            } else {
+                System.out.println(textContainer.getString("check_item_entry_fail"));
+            }
+        } else {
+            System.out.println(textContainer.getString("global_empty_list"));
+        }
     }
 }
