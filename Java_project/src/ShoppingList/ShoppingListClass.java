@@ -25,4 +25,10 @@ public class ShoppingListClass {
             shoppingListItems[shoppingListItemsAmount] = new ShoppingListItemClass(inputName,inputValue);
         }
     }
+
+    public void returnWholeShoppingList(){
+        for(int i = 0; i < shoppingListItems.length; i++){
+            System.out.println(shoppingListItems[i].returnItemName() +" x "+ shoppingListItems[i].returnItemAmount());
+        }
+    }
 }

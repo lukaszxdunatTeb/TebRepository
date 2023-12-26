@@ -38,7 +38,8 @@ public class Main {
                     break;
                 //Wyświetlenie listy zakupów
                 case 3:
-
+                    System.out.println(textContainer.getString("show_current_list_entry_info"));
+                    shoppingList.returnWholeShoppingList();
                     break;
                 //Zamykanie programu
                 default:

@@ -17,4 +17,8 @@ class ShoppingListItemClass{
     public String returnItemName(){
         return name;
     }
+
+    public int returnItemAmount(){
+        return amount;
+    }
 }
