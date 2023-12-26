@@ -128,6 +128,8 @@ public class Main {
         System.out.println(textContainer.getString("main_menu_entry_show_current_list"));
         //Opcja wyszukania i wyświetlenia konkretnego elementu z listy
         System.out.println(textContainer.getString("main_menu_entry_check_item"));
+        //Opcja zmiany języka
+        System.out.println(textContainer.getString("main_menu_entry_set_locale"));
         //Informacja o sposobie zakończenia programu - naciśnięcie dowolnego innego klawisza
         System.out.println(textContainer.getString("main_menu_entry_close_program"));
     }
