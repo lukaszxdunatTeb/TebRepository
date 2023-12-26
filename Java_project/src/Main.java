@@ -34,7 +34,17 @@ public class Main {
                     String inputName = input.getValueString();
                     System.out.print(textContainer.getString("add_new_item_entry_set_value"));
                     int inputValue = input.getValueInt();
-                    shoppingList.addNewItemToTheList(inputName,inputValue);
+
+                    int indexOfItemToUpdate = shoppingList.returnItemIndex(inputName);
+                    if(indexOfItemToUpdate > -1){
+                        System.out.println(textContainer.getString("add_new_item_entry_item_exists"));
+                        if(input.getValueString().toLowerCase().equals("y")){
+                            shoppingList.updateAmountOfItemOnList(indexOfItemToUpdate,inputValue);
+                        }
+                    } else {
+                        shoppingList.addNewItemToTheList(inputName,inputValue);
+                    }
+
                     break;
                 //Usuwanie elementu z listy
                 case 2:
@@ -62,9 +72,9 @@ public class Main {
                 case 4:
                     if(shoppingList.returnProductsAmount() > 0) {
                         System.out.print(textContainer.getString("check_item_entry_put_name"));
-                        int index = shoppingList.returnItemIndex(input.getValueString());
-                        if(index > -1){
-                            System.out.println(textContainer.getString("check_item_entry_pass") + (index+1));
+                        int indexOfSearchingItem = shoppingList.returnItemIndex(input.getValueString());
+                        if(indexOfSearchingItem > -1){
+                            System.out.println(textContainer.getString("check_item_entry_pass") + (indexOfSearchingItem+1));
                         } else {
                             System.out.println(textContainer.getString("check_item_entry_fail"));
                         }

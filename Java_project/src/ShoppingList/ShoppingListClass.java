@@ -59,4 +59,8 @@ public class ShoppingListClass {
             return 0;
         }
     }
+
+    public void updateAmountOfItemOnList(int inputIndex, int inputValue){
+        shoppingListItems[inputIndex].updateProductAmount(inputValue);
+    }
 }
