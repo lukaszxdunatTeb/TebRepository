@@ -3,6 +3,7 @@
  */
 
 import InputData.InputDataClass;
+import ShoppingList.ShoppingListClass;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -11,6 +12,8 @@ public class Main {
     private static ResourceBundle textContainer;
 
     private static InputDataClass input = new InputDataClass();
+
+    private static ShoppingListClass shoppingList = new ShoppingListClass();
     public static void main(String[] args) {
 
         //Wybór języka
@@ -25,7 +28,19 @@ public class Main {
             //Wypisanie menu głównego
             showMainMenu();
             switch (input.getValueInt()){
+                //Dodawanie nowego elementu do listy
+                case 1:
+                    System.out.print(textContainer.getString("add_new_item_entry_set_name"));
+                    String inputName = input.getValueString();
+                    System.out.print(textContainer.getString("add_new_item_entry_set_value"));
+                    int inputValue = input.getValueInt();
+                    shoppingList.addNewItemToTheList(inputName,inputValue);
+                    break;
+                //Wyświetlenie listy zakupów
+                case 3:
 
+                    break;
+                //Zamykanie programu
                 default:
                     ifProgramIsExecuting = false;
             }
