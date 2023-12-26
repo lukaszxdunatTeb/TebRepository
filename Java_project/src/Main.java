@@ -14,8 +14,6 @@ import java.util.ResourceBundle;
 public class Main {
     private static ResourceBundle textContainer;
 
-    private int TwojaStara;
-
     private static InputDataClass input = new InputDataClass();
 
     private static ShoppingListClass shoppingList = new ShoppingListClass();
@@ -49,6 +47,10 @@ public class Main {
                 case 4:
                     findExactItemEntry();
                     break;
+                //Zmiana języka
+                case 5:
+                    selectLanguageManually();
+                    break;
                 // Zamykanie programu
                 default:
                     ifProgramIsExecuting = false;
@@ -66,18 +68,36 @@ public class Main {
     }
 
     //Funkcja wyboru języka programu
+
     private static void selectLanguage(){
+        try {
+            // Odczyt danych z pliku JSON
+            String content = new String(Files.readAllBytes(Paths.get("settings.json")));
+            JSONObject jsonObject = new JSONObject(content);
+
+            // Przykład odczytu danych
+            String locale = jsonObject.getString("locale");
+            setLocale(locale);
+        } catch (Exception e) {
+            selectLanguageManually();
+        }
+    }
+    private static void selectLanguageManually(){
         boolean languageNotSelected = true;
+        String locale = null;
+
         do {
             System.out.println("1 - Wciśnij 1 by wybrać język polski");
             System.out.println("2 - Press 2 to select english language");
             switch (input.getValueInt()) {
                 case 1:
-                    setLocale("PL");
+                    locale = "PL";
+                    setLocale(locale);
                     languageNotSelected = false;
                     break;
                 case 2:
-                    setLocale("EN");
+                    locale = "EN";
+                    setLocale(locale);
                     languageNotSelected = false;
                     break;
                 default:
@@ -85,12 +105,9 @@ public class Main {
         } while (languageNotSelected);
 
         try {
-            // Tworzenie obiektu JSON
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put("name", "John");
-            jsonObject.put("age", 30);
+            jsonObject.put("locale", locale);
 
-            // Zapis danych do pliku
             Files.write(Paths.get("settings.json"), jsonObject.toString().getBytes());
         } catch (Exception e) {
             e.printStackTrace();
