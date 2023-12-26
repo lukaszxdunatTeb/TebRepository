@@ -26,6 +26,11 @@ public class ShoppingListClass {
         }
     }
 
+    //Funkcja zwracająca ilość wpisów na liście
+    public int returnProductsAmount(){
+        return shoppingListItemsAmount;
+    }
+    //Funkcja wyświetlająca całą listę zakupów
     public void returnWholeShoppingList(){
         for(int i = 0; i < shoppingListItems.length; i++){
             System.out.println(shoppingListItems[i].returnItemName() +" x "+ shoppingListItems[i].returnItemAmount());
