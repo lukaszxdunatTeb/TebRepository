@@ -25,7 +25,7 @@ public class Main {
             }
         }while (languageNotSelected);
 
-        System.out.println(resourceBundle.getString("globalHello"));
+        System.out.println(resourceBundle.getString("global_hello"));
 
     }
 
