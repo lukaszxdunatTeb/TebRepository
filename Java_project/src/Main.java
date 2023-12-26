@@ -36,6 +36,15 @@ public class Main {
                     int inputValue = input.getValueInt();
                     shoppingList.addNewItemToTheList(inputName,inputValue);
                     break;
+                //Usuwanie elementu z listy
+                case 2:
+                    System.out.print(textContainer.getString("remove_item_from_list_entry_put_name"));
+                    if(shoppingList.removeItemFromList(input.getValueString())==1){
+                        System.out.println(textContainer.getString("remove_item_from_list_entry_pass"));
+                    } else {
+                        System.out.println(textContainer.getString("remove_item_from_list_entry_fail"));
+                    }
+                    break;
                 //Wyświetlenie listy zakupów
                 case 3:
                     if(shoppingList.returnProductsAmount() > 0) {

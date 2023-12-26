@@ -32,7 +32,7 @@ public class ShoppingListClass {
     }
     //Funkcja wyświetlająca całą listę zakupów
     public void returnWholeShoppingList(){
-        for(int i = 0; i < shoppingListItems.length; i++){
+        for(int i = 0; i < shoppingListItemsAmount; i++){
             System.out.println(shoppingListItems[i].returnItemName() +" x "+ shoppingListItems[i].returnItemAmount());
         }
     }
@@ -44,5 +44,19 @@ public class ShoppingListClass {
             }
         }
         return -1;
+    }
+
+    public int removeItemFromList(String inputName){
+        int index = returnItemIndex(inputName);
+        if (index > -1){
+            shoppingListItemsAmount--;
+            for(int i = index; i < shoppingListItemsAmount; i++){
+                shoppingListItems[i]=shoppingListItems[i+1];
+            }
+            shoppingListItems[shoppingListItemsAmount]=null;
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }
