@@ -4,12 +4,17 @@
 
 import InputData.InputDataClass;
 import ShoppingList.ShoppingListClass;
+import org.json.JSONObject;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class Main {
     private static ResourceBundle textContainer;
+
+    private int TwojaStara;
 
     private static InputDataClass input = new InputDataClass();
 
@@ -64,8 +69,8 @@ public class Main {
     private static void selectLanguage(){
         boolean languageNotSelected = true;
         do {
-            System.out.println("1 - Polski");
-            System.out.println("2 - English");
+            System.out.println("1 - Wciśnij 1 by wybrać język polski");
+            System.out.println("2 - Press 2 to select english language");
             switch (input.getValueInt()) {
                 case 1:
                     setLocale("PL");
@@ -78,6 +83,18 @@ public class Main {
                 default:
             }
         } while (languageNotSelected);
+
+        try {
+            // Tworzenie obiektu JSON
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("name", "John");
+            jsonObject.put("age", 30);
+
+            // Zapis danych do pliku
+            Files.write(Paths.get("settings.json"), jsonObject.toString().getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //Funkcja wypisywania menu głównego
