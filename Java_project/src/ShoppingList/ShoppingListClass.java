@@ -36,4 +36,13 @@ public class ShoppingListClass {
             System.out.println(shoppingListItems[i].returnItemName() +" x "+ shoppingListItems[i].returnItemAmount());
         }
     }
+
+    public int returnItemIndex(String inputName){
+        for(int i = 0; i < shoppingListItemsAmount; i++){
+            if (inputName.toLowerCase().equals(shoppingListItems[i].returnItemName().toLowerCase())) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }

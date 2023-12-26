@@ -38,14 +38,28 @@ public class Main {
                     break;
                 //Wyświetlenie listy zakupów
                 case 3:
-                    if(shoppingList.returnProductsAmount()>0) {
+                    if(shoppingList.returnProductsAmount() > 0) {
                         System.out.println(textContainer.getString("show_current_list_entry_info"));
                         shoppingList.returnWholeShoppingList();
                     } else {
                         System.out.println(textContainer.getString("show_current_list_entry_empty_list"));
                     }
                     break;
-                //Zamykanie programu
+                //Wyszukanie elementu na liście
+                case 4:
+                    if(shoppingList.returnProductsAmount() > 0) {
+                        System.out.print(textContainer.getString("check_item_entry_put_name"));
+                        int index = shoppingList.returnItemIndex(input.getValueString());
+                        if(index > -1){
+                            System.out.println(textContainer.getString("check_item_entry_pass") + (index+1));
+                        } else {
+                            System.out.println(textContainer.getString("check_item_entry_fail"));
+                        }
+                    } else {
+                        System.out.println(textContainer.getString("show_current_list_entry_empty_list"));
+                    }
+                    break;
+                // Zamykanie programu
                 default:
                     ifProgramIsExecuting = false;
             }
