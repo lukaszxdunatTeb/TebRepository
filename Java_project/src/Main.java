@@ -38,12 +38,16 @@ public class Main {
                     break;
                 //Usuwanie elementu z listy
                 case 2:
-                    System.out.print(textContainer.getString("remove_item_from_list_entry_put_name"));
-                    if(shoppingList.removeItemFromList(input.getValueString())==1){
-                        System.out.println(textContainer.getString("remove_item_from_list_entry_pass"));
-                    } else {
-                        System.out.println(textContainer.getString("remove_item_from_list_entry_fail"));
-                    }
+                    if(shoppingList.returnProductsAmount() > 0) {
+                        System.out.print(textContainer.getString("remove_item_from_list_entry_put_name"));
+                        if(shoppingList.removeItemFromList(input.getValueString())==1){
+                            System.out.println(textContainer.getString("remove_item_from_list_entry_pass"));
+                        } else {
+                            System.out.println(textContainer.getString("remove_item_from_list_entry_fail"));
+                        }
+                      } else {
+                        System.out.println(textContainer.getString("show_current_list_entry_empty_list"));
+                      }
                     break;
                 //Wyświetlenie listy zakupów
                 case 3:
