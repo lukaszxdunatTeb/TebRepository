@@ -1,5 +1,8 @@
 package ShoppingList;
+import org.json.JSONObject;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
 public class ShoppingListClass {
     private int shoppingListItemsAmount = 0;
     private ShoppingListItemClass[] shoppingListItems = new ShoppingListItemClass[0];
@@ -62,5 +65,17 @@ public class ShoppingListClass {
 
     public void updateAmountOfItemOnList(int inputIndex, int inputValue){
         shoppingListItems[inputIndex].updateProductAmount(inputValue);
+    }
+
+    public void saveToFile() {
+        try {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("amount", shoppingListItemsAmount);
+            jsonObject.put("data", shoppingListItems);
+
+            Files.write(Paths.get("data.json"), jsonObject.toString().getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

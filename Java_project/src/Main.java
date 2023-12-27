@@ -59,6 +59,8 @@ public class Main {
 
         //Zakończenie programu - pożegnanie
         System.out.println(textContainer.getString("global_goodbye"));
+
+        shoppingList.saveToFile();
     }
 
     //Funkcja ustawienia języka programu
