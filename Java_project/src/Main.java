@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-public class Main { 
+public class Main {
     private static ResourceBundle textContainer;
 
     private static InputDataClass input = new InputDataClass();
